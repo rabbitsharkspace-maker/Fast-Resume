@@ -1,0 +1,25 @@
+# Environment variables - NEVER commit these
+.env
+.env.local
+.env.production
+
+# Dev helper / patch scripts
+fix3.cjs
+fix_app.cjs
+fix_clean.cjs
+fix_fetch.cjs
+modify_app.cjs
+modify_app2.cjs
+modify_server.cjs
+update_app_settings.cjs
+print_lines.cjs
+test-mammoth.js
+output.txt
+
+# Logs
+node_modules
+dist
+dist-ssr
+*.log
+*.local
+.DS_Store
