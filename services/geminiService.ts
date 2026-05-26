@@ -36,7 +36,7 @@ export const generateContentFromBackend = async (options: any): Promise<any> => 
         console.log('Using direct client-side Gemini call (v1)...');
         const genAI = new GoogleGenerativeAI(apiKey);
         
-        let modelId = (preferredModel && preferredModel !== 'default') ? preferredModel : (options.model || "gemini-2.5-flash");
+        let modelId = (preferredModel && preferredModel !== 'default') ? preferredModel : (options.model || "gemini-1.5-flash");
 
         const model = genAI.getGenerativeModel({
           model: modelId,
@@ -306,7 +306,7 @@ export const analyzeResume = async (
   enVariant: string = 'American'
 ): Promise<AnalysisResult> => {
   console.log('analyzeResume called with JD length:', jdText.length, 'and input type:', typeof resumeInput);
-  const model = "gemini-2.5-flash";
+  const model = "gemini-1.5-flash";
   const isTextResume = typeof resumeInput === 'string';
   
   let userContentPart: any;
@@ -433,7 +433,7 @@ export const analyzeProjectMedia = async (
   fileName: string,
   targetLang: Language = 'en'
 ): Promise<Omit<Project, 'id' | 'originalFileName' | 'originalMimeType' | 'base64Data'>> => {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-1.5-flash";
   const langName = { en: 'English', zh: 'Chinese', ja: 'Japanese', ko: 'Korean', es: 'Spanish', de: 'German', fr: 'French', ar: 'Arabic' }[targetLang];
   
   const systemInstruction = `
@@ -490,7 +490,7 @@ export const analyzeProjectMedia = async (
 };
 
 export const generatePortfolioBio = async (projects: Project[], resume: ResumeContent | null, targetLang: Language = 'en'): Promise<{ bio: string; role: string }> => {
-    const model = "gemini-2.5-flash";
+    const model = "gemini-1.5-flash";
     const langName = { en: 'English', zh: 'Chinese', ja: 'Japanese', ko: 'Korean', es: 'Spanish', de: 'German', fr: 'French', ar: 'Arabic' }[targetLang];
     
     const systemInstruction = `
@@ -537,7 +537,7 @@ export const generatePortfolioBio = async (projects: Project[], resume: ResumeCo
 };
 
 export const generateDocumentSummary = async (base64Data: string, mimeType: string, targetLang: Language = 'en'): Promise<{ summary: string; keyPoints: string[] }> => {
-    const model = "gemini-2.5-flash";
+    const model = "gemini-1.5-flash";
     const langName = { en: 'English', zh: 'Chinese', ja: 'Japanese', ko: 'Korean', es: 'Spanish', de: 'German', fr: 'French', ar: 'Arabic' }[targetLang];
     try {
         const parts: any[] = [];
@@ -558,7 +558,7 @@ export const generateCareerPrediction = async (
   targetRole?: string,
   targetLang: Language = 'en'
 ): Promise<CareerPredictionResult> => {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-1.5-flash";
   const langName = { en: 'English', zh: 'Chinese', ja: 'Japanese', ko: 'Korean', es: 'Spanish', de: 'German', fr: 'French', ar: 'Arabic' }[targetLang];
 
   const systemInstruction = `
@@ -630,7 +630,7 @@ export const generateCareerStrategy = async (
     missingSkills: string[],
     targetLang: Language = 'en'
 ): Promise<any> => {
-    const model = "gemini-2.5-flash";
+    const model = "gemini-1.5-flash";
     const langName = { en: 'English', zh: 'Chinese', ja: 'Japanese', ko: 'Korean', es: 'Spanish', de: 'German', fr: 'French', ar: 'Arabic' }[targetLang];
     try {
         const response = await callGeminiWithRetry(() => generateContentFromBackend({
@@ -654,7 +654,7 @@ export const generateCareerStrategy = async (
 };
 
 export const getAICoachResponse = async (chatHistory: any[], portfolioData: any, resumeContent: any, jdText: any, targetLang: Language = 'en'): Promise<string> => {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-1.5-flash";
   const langName = { en: 'English', zh: 'Chinese', ja: 'Japanese', ko: 'Korean', es: 'Spanish', de: 'German', fr: 'French', ar: 'Arabic' }[targetLang];
   
   const systemInstruction = `
@@ -680,7 +680,7 @@ export const analyzeWebsiteContent = async (
   htmlContent: string,
   targetLang: Language = 'en'
 ): Promise<{ projects: Omit<Project, 'id' | 'originalFileName' | 'originalMimeType' | 'base64Data'>[] }> => {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-1.5-flash";
   const langName = { en: 'English', zh: 'Chinese', ja: 'Japanese', ko: 'Korean', es: 'Spanish', de: 'German', fr: 'French', ar: 'Arabic' }[targetLang];
 
   const systemInstruction = `
