@@ -3,7 +3,7 @@
 .env.local
 .env.production
 
-# Dev helper / patch scripts
+# Dev helper / patch scripts (not needed in repo)
 fix3.cjs
 fix_app.cjs
 fix_clean.cjs
@@ -17,9 +17,26 @@ test-mammoth.js
 output.txt
 
 # Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
 node_modules
 dist
 dist-ssr
-*.log
 *.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

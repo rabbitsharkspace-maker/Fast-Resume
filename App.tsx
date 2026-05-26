@@ -566,7 +566,7 @@ function App() {
                  </div>
                  <footer className="py-12 border-t border-slate-100 bg-white text-center no-print">
                     <div className="max-w-lg mx-auto flex flex-col items-center gap-4">
-                        <img src="/RabbitShark logo.png" alt="Rabbit Shark Logo" className="h-12 w-auto mb-2" />
+                        <img src="/RabbitShark-logo.png" alt="Rabbit Shark Logo" className="h-12 w-auto mb-2" />
                         <a href="https://rabbitshark.space/" target="_blank" rel="noopener noreferrer" className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 hover:text-indigo-700 transition-all">
                             Visit more on RabbitShark.space
                         </a>
@@ -739,7 +739,7 @@ function App() {
                 <div className={`h-px w-12 mx-auto ${activeModule === 'career' ? 'bg-white/5' : 'bg-slate-100'}`}></div>
                 
                 <div className="flex flex-col items-center gap-3 py-2">
-                  <img src="/RabbitShark logo.png" alt="Rabbit Shark Logo" className="h-10 w-auto opacity-90 transition-opacity hover:opacity-100" />
+                  <img src="/RabbitShark-logo.png" alt="Rabbit Shark Logo" className="h-10 w-auto opacity-90 transition-opacity hover:opacity-100" />
                   <a href="https://rabbitshark.space/" target="_blank" rel="noopener noreferrer" className={`text-xs font-black uppercase tracking-widest hover:underline transition-all ${activeModule === 'career' ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'}`}>
                     Visit more on RabbitShark.space
                   </a>
